@@ -413,3 +413,220 @@ Kemudian tambahkan CSS.
 1. Tambahkan Layout untuk menu About => buat single layout yang berisi deskripsi, portfolio, dll.
 2. Tambahkan layout untuk menu Contact => yang berisi form isian: nama, email, message, dll.
 
+## Jawab
+1. Saya menambahkan file about.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Layout Sederhana</h1>
+        </header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="artikel.html">Artikel</a>
+            <a href="about.html" class="active">About</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
+        <section id="hero">
+            <h1 style="text-align: center;">About Me</h1>
+        </section>
+        <section id="wrapper">
+            <section id="main">
+                <div class="row">
+                    <article class="entry">
+                        <h2>About Me</h2>
+                        <img src="https://dummyimage.com/200x250/7b8a70/fff.png" alt="">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+                    </article>
+                    <hr class="divider" />
+                    <div class="porto">
+                        <h2>Portfolio</h2>
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                    </div>
+                    <div class="porto">
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                        <div class="box">
+                            <img src="https://dummyimage.com/150/7b8a70/fff.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <aside id="sidebar">
+                <div class="widget-box">
+                    <h3 class="title">Widget Header</h3>
+                    <ul>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                    </ul>
+                </div>
+                <div class="widget-box">
+                    <h3 class="title">Widget Text</h3>
+                    <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+lalu saya menambahkan css untuk class = porto pada file style.css.
+```css
+.row:after, .row:before,
+.entry:after, .entry:before,
+.porto:after, .porto:before {
+    content:'';
+    display:table;
+}
+.row:after,
+.entry:after,
+.porto:after {
+    clear:both;
+}
+.porto {
+    margin: 15px 0;
+}
+
+.porto img {
+    border-radius: 5px;
+    margin-right: 15px;
+}
+```
+![image](https://user-images.githubusercontent.com/81838946/115889438-247df080-a47e-11eb-84db-4294edf3bce2.png)
+![image](https://user-images.githubusercontent.com/81838946/115889522-38295700-a47e-11eb-840b-de525d0bae1a.png)
+
+2. menambahkan page kontak.html
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout Sederhana</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>Layout Sederhana</h1>
+        </header>
+        <nav>
+            <a href="home.html">Home</a>
+            <a href="artikel.html">Artikel</a>
+            <a href="about.html">About</a>
+            <a href="kontak.html" class="active">Kontak</a>
+        </nav>
+        <section id="hero">
+            <h1 style="text-align: center;">Contact Us</h1>
+        </section>
+        <section id="wrapper">
+            <section id="main">
+                <div class="row">
+                    <h2>Contact Us</h2>
+                    <div class="contact">                    
+                        <form action="action_page.php">
+                  
+                            <label for="nama_dpn">Nama Depan</label>
+                            <input type="text" id="nama_dpn" name="namadepan" placeholder="Nama Depan Anda..">
+                  
+                            <label for="nama_blkng">Nama Belakang</label>
+                            <input type="text" id="nama_blkng" name="namabelakang" placeholder="Nama Belakang Anda..">
+                            
+                            <label for="email">Email</label>
+                            <input type="text" id="email" name="email" placeholder="Email Anda..">
+                  
+                            <label for="pesan">Pesan</label>
+                            <textarea id="pesan]" name="pesan" placeholder="Tulis sesuatu.." style="height:200px"></textarea>
+                  
+                            <input type="submit" value="Kirim">
+                  
+                        </form>
+                    </div>
+                </div>
+            </section>
+            <aside id="sidebar">
+                <div class="widget-box">
+                    <h3 class="title">Widget Header</h3>
+                    <ul>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                        <li><a href="#">Widget Link</a></li>
+                    </ul>
+                </div>
+                <div class="widget-box">
+                    <h3 class="title">Widget Text</h3>
+                    <p>Vestibulum lorem elit, iaculis in nisl volutpat, malesuada tincidunt arcu. Proin in leo fringilla, vestibulum mi porta, faucibus felis. Integer pharetra est nunc, nec pretium nunc pretium ac.</p>
+                </div>
+            </aside>
+        </section>
+        <footer>
+            <p>&copy; 2021 - Universitas Pelita Bangsa</p>
+        </footer>
+    </div>
+</body>
+</html>
+```
+lalu menambahkan css untuk form contact.
+```css
+/* contact*/
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+    margin-top: 6px;
+    margin-bottom: 16px; 
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #428bca;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #428bca;
+  }
+  
+  .contact {
+    border-radius: 5px;
+    padding: 20px;
+  }
+
+```
+![image](https://user-images.githubusercontent.com/81838946/115892503-69575680-a481-11eb-97fd-f4d0d961bc96.png)
+![image](https://user-images.githubusercontent.com/81838946/115892545-73795500-a481-11eb-9580-4cf83464c33f.png)
+
